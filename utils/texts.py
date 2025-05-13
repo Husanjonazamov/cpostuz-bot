@@ -144,3 +144,18 @@ PASSPORT_BACK = {
     "uz": "🪪 Passportingizni orqa tarafini yuklang (JShShIR va Seria raqamini tasdiqlash uchun): Namuna yuqoridagi rasmda\n\n‼️Eslatma: Faqat O’zbekiston respublikasi biometrik passporti yoki ID Kartasi bo’lishi shart, aks holda sizning so’rovingiz qabul qilinmaydi!",
     "ru": "🪪 Загрузите обратную сторону паспорта (для подтверждения ПИНФЛ и серийного номера): Пример на изображении выше\n\n‼️Примечание: Принимаются только биометрические паспорта или ID-карты Республики Узбекистан. В противном случае ваш запрос не будет принят!",
 }
+
+
+
+def summary(**kwargs):
+    summary = ''
+    
+    summary += f"👤 Ism: {kwargs['name']}\n"
+    summary += f"📞 Telefon: {kwargs['phone']}\n"
+    summary += f"🪪 Passport: {kwargs['passport_id']}\n"
+    summary += f"🔢 Pinfl: {kwargs['passport_jsh']}\n"
+    summary += f"📅 Tug'ilgan kun: {kwargs['birth_date']}\n"
+    summary += f"📍 Manzil: {kwargs['address']}\n"
+    summary += f"🏢 Filial: {kwargs['branch']}\n"
+
+    return summary

@@ -23,6 +23,10 @@ async def passport_jsh_handler(message: Message, state: FSMContext):
         await message.answer(texts.INVALID_JSHSHIR[lang])
         return
     
+    await state.update_data({
+        'passport_jsh': passport_jsh
+    })
+    
     
     await message.answer(
         texts.REQUEST_BIRTHDAY[lang],
