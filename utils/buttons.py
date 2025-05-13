@@ -19,3 +19,34 @@ def language():
         resize_keyboard=True
     )
     return lang
+
+
+CHECK_SHIPMENTS = "📦 Jo'natmalarni tekshirish"
+ID_REGISTRATION = "🪪 ID / Ro‘yxatdan o‘tish"
+SETTINGS = "⚙️ Sozlamalar"
+
+CHECK_SHIPMENTS_RU = "📦 Проверить отправления"
+ID_REGISTRATION_RU = "🪪 ID / Регистрация"
+SETTINGS_RU = "⚙️ Настройки"
+
+
+def mainMenu(lang):
+    if lang == 'uz':
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text=CHECK_SHIPMENTS)],
+                [KeyboardButton(text=ID_REGISTRATION)],
+                [KeyboardButton(text=SETTINGS)]
+            ],
+            resize_keyboard=True
+        )
+    else:  
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text=CHECK_SHIPMENTS_RU)],
+                [KeyboardButton(text=ID_REGISTRATION_RU)],
+                [KeyboardButton(text=SETTINGS_RU)]
+            ],
+            resize_keyboard=True
+        )
+    return markup
