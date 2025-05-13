@@ -8,10 +8,10 @@ from state.state import Register
 from utils.env import PASSPORT_BACK_IMAGE
 
 
-
 @dp.message_handler(content_types=['photo'], state=Register.passport_front)
 async def passport_front_handler(message: Message, state: FSMContext):
     user_id = message.from_user.id
+    print(user_id)
     user = getUser(user_id)
     lang = user['data'][0]['lang']
     
@@ -23,7 +23,7 @@ async def passport_front_handler(message: Message, state: FSMContext):
     
     await message.answer_photo(
         photo=PASSPORT_BACK_IMAGE,
-        caption=texts.PASSPORT_FRONT[lang],
+        caption=texts.PASSPORT_BACK[lang],
         reply_markup=buttons.mainBack(lang)
     )
    

@@ -4,7 +4,7 @@ env = Env()
 env.read_env()
 
 BOT_TOKEN = env('BOT_TOKEN')
-ADMIN = env('ADMIN')
+ADMIN = env.int('ADMIN')
 BASE_URL = env('BASE_URL')
 PASSPORT_ID_IMAGE = env('PASSPORT_ID_IMAGE')
 PASSPORT_JSH_IMAGE = env('PASSPORT_JSH_IMAGE')

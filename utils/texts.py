@@ -138,3 +138,9 @@ PASSPORT_FRONT = {
     "uz": "🪪 Passportingizni old tarafini yuklang (JShShIR va Seria raqamini tasdiqlash uchun): Namuna yuqoridagi rasmda\n\n‼️Eslatma: Faqat O’zbekiston respublikasi biometrik passporti yoki ID Kartasi bo’lishi shart, aks holda sizning so’rovingiz qabul qilinmaydi!",
     "ru": "🪪 Загрузите переднюю сторону вашего паспорта (для подтверждения ПИНФЛ и серийного номера): Образец на изображении выше\n\n‼️Примечание: Принимаются только биометрический паспорт или ID-карта Республики Узбекистан, в противном случае ваш запрос не будет принят!"
 }
+
+
+PASSPORT_BACK = {
+    "uz": "🪪 Passportingizni orqa tarafini yuklang (JShShIR va Seria raqamini tasdiqlash uchun): Namuna yuqoridagi rasmda\n\n‼️Eslatma: Faqat O’zbekiston respublikasi biometrik passporti yoki ID Kartasi bo’lishi shart, aks holda sizning so’rovingiz qabul qilinmaydi!",
+    "ru": "🪪 Загрузите обратную сторону паспорта (для подтверждения ПИНФЛ и серийного номера): Пример на изображении выше\n\n‼️Примечание: Принимаются только биометрические паспорта или ID-карты Республики Узбекистан. В противном случае ваш запрос не будет принят!",
+}
