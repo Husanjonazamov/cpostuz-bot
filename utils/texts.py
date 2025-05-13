@@ -1,8 +1,8 @@
 # texts.py fayli
-START = \
-"""
-Assalomu alaykum. 🌟 Xush kelibsiz!
-"""
+START = {
+    "uz": "Assalomu alaykum. 🌟 Xush kelibsiz!",
+    "ru": "Привет. 🌟Добро пожаловать!"
+}
 
 START_LANG = \
 """
