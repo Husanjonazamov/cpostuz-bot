@@ -50,3 +50,23 @@ def mainMenu(lang):
             resize_keyboard=True
         )
     return markup
+
+
+
+def register_phone(lang):
+    if lang == "uz":
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text="📤 Telefon raqamni yuborish", request_contact=True)]
+            ],
+            resize_keyboard=True
+        )
+    else:
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text="📤 Отправить номер телефона", request_contact=True)]
+            ],
+            resize_keyboard=True
+        )
+        
+    return markup

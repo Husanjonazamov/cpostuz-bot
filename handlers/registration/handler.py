@@ -4,7 +4,7 @@ from aiogram.dispatcher import FSMContext
 from loader import dp, bot
 from utils import texts, buttons
 from services.services import getUser
-
+from state.state import Register
 
 
 @dp.message_handler(lambda message: message.text in  (
@@ -20,3 +20,5 @@ async def registration_handler(message: Message, state: FSMContext):
     await message.answer(
         texts.REGISTER_NAME[lang]
     )
+    
+    await Register.name.set()

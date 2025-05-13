@@ -40,3 +40,9 @@ REGISTER_NAME = {
     "uz": NAME_UZ,
     "ru": NAME_RU
 }
+
+
+REGISTER_PHONE = {
+    "uz": "📞 Telefon raqamingizni kiriting yoki quyidagi tugmani bosib yuboring.\n📱 Namuna: +998940014741",
+    "ru": "📞 Введите свой номер телефона или нажмите на кнопку ниже.\n📱 Пример: +998940014741"
+}
