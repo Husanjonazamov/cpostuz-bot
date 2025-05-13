@@ -18,7 +18,8 @@ async def registration_handler(message: Message, state: FSMContext):
     lang = user['data'][0]['lang']
     
     await message.answer(
-        texts.REGISTER_NAME[lang]
+        texts.REGISTER_NAME[lang],
+        reply_markup=buttons.mainBack(lang)
     )
     
     await Register.name.set()

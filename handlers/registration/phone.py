@@ -35,7 +35,8 @@ async def phone(message: Message, state: FSMContext):
     
     await message.answer_photo(
         photo=PASSPORT_ID_IMAGE,
-        caption=texts.PASSPORT_ID[lang]
+        caption=texts.PASSPORT_ID[lang],
+        reply_markup=buttons.mainBack(lang)
     )
     
     await Register.passport_id.set()

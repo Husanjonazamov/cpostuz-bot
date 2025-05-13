@@ -30,5 +30,6 @@ async def passport_id_handler(message: Message, state: FSMContext):
     
     await message.answer_photo(
         photo=PASSPORT_JSH_IMAGE,
-        caption=texts.PASSPORT_JSH[lang]
+        caption=texts.PASSPORT_JSH[lang],
+        reply_markup=buttons.mainBack(lang)
     )
