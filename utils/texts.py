@@ -46,3 +46,32 @@ REGISTER_PHONE = {
     "uz": "📞 Telefon raqamingizni kiriting yoki quyidagi tugmani bosib yuboring.\n📱 Namuna: +998940014741",
     "ru": "📞 Введите свой номер телефона или нажмите на кнопку ниже.\n📱 Пример: +998940014741"
 }
+
+
+PASSPORT_ID_UZ = \
+"""
+🪪 Passport seriya raqamingizni kiriting:
+
+ Namuna yuqoridagi rasmdagi: AA0000001 
+
+ ❗️Eslatma: Hurmatli mijiz agar passport yoki ID kartadagi seria raqamingizni kiritmasangiz sizning so'rovingiz bekor qilinishi mumkin!
+"""
+
+PASSPORT_ID_RU = \
+"""
+🪪 Введите серийный номер вашего паспорта:
+
+ Образец на картинке выше: AA0000001 
+
+ ❗️Примечание: Уважаемый господин, если вы не введете серийный номер паспорта или удостоверения личности, ваш запрос может быть быть отменено!
+"""
+
+PASSPORT_ID = {
+    "uz": PASSPORT_ID_UZ,
+    "ru": PASSPORT_ID_RU
+}
+
+INVALID_PHONE = {
+    "uz": "☎️ Iltimos, telefon raqamingizni to‘g‘ri kiriting:\n\nNamuna: +998901234567",
+    "ru": "☎️ Пожалуйста, введите корректный номер телефона:\n\nПример: +998901234567"
+}
