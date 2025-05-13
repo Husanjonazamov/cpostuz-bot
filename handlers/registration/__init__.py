@@ -5,3 +5,5 @@ from . import passport_id
 from . import passport_jsh
 from . import birtday
 from . import address
+from . import branch
+from . import passport_front

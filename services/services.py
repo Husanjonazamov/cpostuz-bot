@@ -38,16 +38,15 @@ def putUser(user_id, lang):
     
 def getBranch(lang):
     url = f"{BASE_URL}/branch/"
+    
     headers = {
         "Accept-Language": lang  
     }
 
     response = requests.get(url, headers=headers)
-    print(response.status_code)
 
     if response.status_code == 200:
         data = response.json()
-        print(data)
         return data["data"]['results']
     else:
         return []

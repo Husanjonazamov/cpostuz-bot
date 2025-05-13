@@ -28,4 +28,5 @@ async def address_handler(message: Message, state: FSMContext):
         texts.BRANCH[lang],
         reply_markup=buttons.branch(branch, lang)
     )
+    await Register.branch.set()
 
