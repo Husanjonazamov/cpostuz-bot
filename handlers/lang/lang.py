@@ -6,7 +6,10 @@ from loader import dp, bot
 
 
 
-@dp.message_handler()
+@dp.message_handler(lambda message: message.text == (
+    buttons.LANGUAGES_UZ,
+    buttons.LANGUAGES_RU
+    ), state="*")
 async def lang_handler(message: Message, state: FSMContext):
     pass
 
