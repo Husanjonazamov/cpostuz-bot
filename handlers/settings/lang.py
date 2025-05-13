@@ -4,24 +4,25 @@ from aiogram.dispatcher import FSMContext
 from utils import texts, buttons
 from loader import dp, bot
 from ..menu import menu
-from services.services import createUser
-from state.state import lang
+from services.services import putUser
+from state.state import Putlang
+
 
 
 @dp.message_handler(lambda message: message.text in (
     buttons.LANGUAGES_UZ,
     buttons.LANGUAGES_RU
-), state=lang.lang)
+), state=Putlang.lang)
 
 async def lang_handler(message: Message, state: FSMContext):
     lang = message.text
     user_id = message.from_user.id
 
-
     lang_codes = {
         buttons.LANGUAGES_UZ: 'uz',
         buttons.LANGUAGES_RU: 'ru',
     }
+    
     
     if not lang in lang_codes:
         """
@@ -36,11 +37,7 @@ async def lang_handler(message: Message, state: FSMContext):
         'lang': lang
     })
 
-    user = {
-        "user_id": user_id,
-        "lang": lang
-    }
-    createUser(user)
+    putUser(user_id, lang)
     await menu(message, state)
 
 

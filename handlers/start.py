@@ -6,6 +6,7 @@ from loader import dp, bot
 from utils import texts, buttons
 from services.services import createUser, getUser
 from .menu import menu
+from state.state import lang
 
 
 @dp.message_handler(commands=['start'], state="*")
@@ -21,4 +22,5 @@ async def start_handler(message: Message, state: FSMContext):
             texts.START_LANG,
             reply_markup=buttons.language()
         )
+        await lang.lang.set()
        

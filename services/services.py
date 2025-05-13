@@ -23,3 +23,15 @@ def getUser(user_id):
         return data
     else:
         return
+    
+    
+def putUser(user_id, lang):
+    url = f"{BASE_URL}/users/update/{user_id}/"
+    response = requests.patch(url, json={"lang": lang})
+    print(response.status_code)
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        return
+    

@@ -16,5 +16,5 @@ async def menu(message: Message, state: FSMContext):
     
     await message.answer(
         texts.START[lang],
-        reply_markup=buttons.mainMenu(lang  )
+        reply_markup=buttons.mainMenu(lang)
     )

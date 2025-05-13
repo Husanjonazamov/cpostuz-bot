@@ -8,3 +8,8 @@ START_LANG = \
 """
 🔷 Tilni tanlang
 """
+
+SETTINGS_HANDLER = {
+    "uz": "Tilni tanlang!",
+    "ru": "Выберите язык!"
+}
