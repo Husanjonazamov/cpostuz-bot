@@ -75,3 +75,35 @@ INVALID_PHONE = {
     "uz": "☎️ Iltimos, telefon raqamingizni to‘g‘ri kiriting:\n\nNamuna: +998901234567",
     "ru": "☎️ Пожалуйста, введите корректный номер телефона:\n\nПример: +998901234567"
 }
+
+
+INVALID_PASSPORT_ID = {
+    "uz": "❌ Passport seriya raqami noto‘g‘ri!\n\n✅ Namuna: <b>AA1234567</b>",
+    "ru": "❌ Серия и номер паспорта недействительны!\n\n✅ Пример: <b>AA1234567</b>",
+}
+
+
+
+PASSPORT_JSH_UZ = \
+"""
+🪪 Passport JShShIR(PINFL) raqamingizni kiriting:
+
+ Namuna yuqoridagi rasmdagi: 30101800050014 
+
+ ❗️Eslatma: Hurmatli mijiz agar passport yoki ID kartadagi JShShIR(Pinfl) raqamingizni kiritmasangiz sizning so'rovingiz bekor qilinishi mumkin!
+"""
+
+
+PASSPORT_JSH_RU = \
+"""
+🪪 Введите номер вашего паспорта JShSHIR(PINFL):
+
+ Образец на картинке выше: 30101800050014 
+
+ ❗️Примечание: Уважаемый клиент, если вы не введете свой номер JShShIR(PINFL) со своего паспорт или ID-карта, возможно, Ваш запрос будет отменен!
+"""
+
+PASSPORT_JSH = {
+    "uz": PASSPORT_JSH_UZ,
+    "ru": PASSPORT_JSH_RU
+}
