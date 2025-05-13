@@ -8,7 +8,7 @@ from loader import dp, bot
 from utils.env import PASSPORT_ID_IMAGE
 import re
 
-PHONE_REGEX = re.compile(r"^\+?\d{8,15}$")
+PHONE_REGEX = re.compile(r'^\+?998\d{9}$')
 
 
 @dp.message_handler(content_types=['text', 'contact'], state=Register.phone)
@@ -20,7 +20,7 @@ async def phone(message: Message, state: FSMContext):
     if message.contact:
         phone = message.contact.phone_number
     else:
-        text = message.text.split()
+        text = str(message.text).strip()
         
         if not PHONE_REGEX.match(text):
             await message.answer(
