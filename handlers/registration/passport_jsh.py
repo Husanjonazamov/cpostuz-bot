@@ -33,7 +33,7 @@ async def passport_jsh_handler(message: Message, state: FSMContext):
         reply_markup=buttons.mainBack(lang)
     )
     
-    await Register.address.set()
+    await Register.birth_date.set()
     
         
     

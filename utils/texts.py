@@ -150,12 +150,29 @@ PASSPORT_BACK = {
 def summary(**kwargs):
     summary = ''
     
-    summary += f"👤 Ism: {kwargs['name']}\n"
-    summary += f"📞 Telefon: {kwargs['phone']}\n"
-    summary += f"🪪 Passport: {kwargs['passport_id']}\n"
-    summary += f"🔢 Pinfl: {kwargs['passport_jsh']}\n"
-    summary += f"📅 Tug'ilgan kun: {kwargs['birth_date']}\n"
-    summary += f"📍 Manzil: {kwargs['address']}\n"
-    summary += f"🏢 Filial: {kwargs['branch']}\n"
+    if kwargs['lang'] == 'uz':
+        summary += f"👤 Ism: {kwargs['name']}\n"
+        summary += f"📞 Telefon: {kwargs['phone']}\n"
+        summary += f"🪪 Passport: {kwargs['passport_id']}\n"
+        summary += f"🔢 Pinfl: {kwargs['passport_jsh']}\n"
+        summary += f"📅 Tug'ilgan kun: {kwargs['birth_date']}\n"
+        summary += f"📍 Manzil: {kwargs['address']}\n"
+        summary += f"🏢 Filial: {kwargs['branch']}\n"
+    else:
+        summary += f"👤 Имя: {kwargs['name']}\n"
+        summary += f"📞 Телефон: {kwargs['phone']}\n"
+        summary += f"🪪 Паспорт: {kwargs['passport_id']}\n"
+        summary += f"🔢 ПИНФЛ: {kwargs['passport_jsh']}\n"
+        summary += f"📅 Дата рождения: {kwargs['birth_date']}\n"
+        summary += f"📍 Адрес: {kwargs['address']}\n"
+        summary += f"🏢 Филиал: {kwargs['branch']}\n"
 
+        
     return summary
+
+
+
+CONFIRM = {
+    "uz": "✅ Ma'lumotlaringiz to'g'riligini tasdiqlaysizmi?",
+    "ru": "✅ Ma'lumotlaringiz to'g'riligini tasdiqlaysizmi?"
+}

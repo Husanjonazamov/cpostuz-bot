@@ -9,7 +9,6 @@ from state.state import Register
 
 
 
-
 @dp.message_handler(content_types=['text'], state=Register.birth_date)
 async def birth_date_handler(message: Message, state: FSMContext):
     user_id = message.from_user.id
@@ -21,6 +20,7 @@ async def birth_date_handler(message: Message, state: FSMContext):
     await state.update_data({
         "birth_date": birth_date
     })
+    print(f"---------------{birth_date}----------------")
         
     await message.answer(
         texts.ADDRESS[lang],

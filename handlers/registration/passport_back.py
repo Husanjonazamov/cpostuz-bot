@@ -29,6 +29,7 @@ async def passport_back_handler(message: Message, state: FSMContext):
     passport_back = message.photo[-1].file_id
     
     caption = texts.summary(
+        lang=lang,
         name=name,
         phone=phone,
         passport_id=passport_id,
@@ -49,6 +50,9 @@ async def passport_back_handler(message: Message, state: FSMContext):
         chat_id=user_id,
         media=media_group
     )
-    
+    await message.answer(
+        texts.CONFIRM[lang],
+        reply_markup=buttons.confirm(lang)
+    )
     
     

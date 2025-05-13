@@ -120,3 +120,27 @@ def branch(branches, lang):
     return markup
     
 
+CONFIRM_UZ = "👍 Tasdiqlayman"
+CONFIRM_RU = "👍 Подтверждаю"
+
+
+def confirm(lang): 
+    if lang == "uz":
+        markup =ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(CONFIRM_UZ)],
+                [KeyboardButton(BACK_UZ)]
+            ],
+            resize_keyboard=True
+        )
+    else:
+        markup =ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(CONFIRM_RU)],
+                [KeyboardButton(BACK_RU)]
+            ],
+            resize_keyboard=True
+        )
+        
+    return markup
+       
