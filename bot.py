@@ -3,7 +3,7 @@ from aiogram import executor
 
 from loader import dp, bot
 from utils.env import ADMIN
-
+import handlers
 
 
 async def on_startup(dp):
