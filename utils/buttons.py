@@ -1,5 +1,11 @@
 # buttons.py fayli
-from aiogram.types import ReplyKeyboardMarkup, KeyboardButton
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
+from datetime import datetime
+import calendar
+
+
+
+
 
 LANGUAGES_UZ = "🇺🇿 O'zbek tili"
 LANGUAGES_RU = "🇷🇺 Русский язык"
@@ -94,3 +100,6 @@ def register_phone(lang):
         )
         
     return markup
+
+
+

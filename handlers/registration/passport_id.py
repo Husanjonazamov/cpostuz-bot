@@ -33,3 +33,5 @@ async def passport_id_handler(message: Message, state: FSMContext):
         caption=texts.PASSPORT_JSH[lang],
         reply_markup=buttons.mainBack(lang)
     )
+    
+    await Register.passport_jsh.set()

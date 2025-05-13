@@ -107,3 +107,14 @@ PASSPORT_JSH = {
     "uz": PASSPORT_JSH_UZ,
     "ru": PASSPORT_JSH_RU
 }
+
+
+INVALID_JSHSHIR = {
+    "uz": "❌ JShShIR noto‘g‘ri!\n\n✅ Namuna: <b>30101800050014</b>",
+    "ru": "❌ Неправильный ИНН (JShShIR)!\n\n✅ Пример: <b>30101800050014</b>",
+}
+
+REQUEST_BIRTHDAY = {
+    "uz": "📅 Tug'ilgan sanangizni kiriting:",
+    "ru": "📅 Введите вашу дату рождения:",
+}
