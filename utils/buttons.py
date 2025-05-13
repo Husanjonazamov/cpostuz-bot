@@ -102,4 +102,21 @@ def register_phone(lang):
     return markup
 
 
+def branch(branches, lang):
+    markup = ReplyKeyboardMarkup(
+        resize_keyboard=True
+    )
+    for branch_item in branches:
+        name = branch_item['name']
+
+        button = KeyboardButton(name)
+        markup.add(button)
+    
+    if lang == "uz":
+        markup.add(BACK_UZ)
+    else:
+        markup.add(BACK_RU)
+        
+    return markup
+    
 
