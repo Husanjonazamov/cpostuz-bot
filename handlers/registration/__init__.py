@@ -8,3 +8,6 @@ from . import address
 from . import branch
 from . import passport_front
 from . import passport_back
+
+# folder
+from . import confirm

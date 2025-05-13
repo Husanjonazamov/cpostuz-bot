@@ -20,7 +20,6 @@ async def birth_date_handler(message: Message, state: FSMContext):
     await state.update_data({
         "birth_date": birth_date
     })
-    print(f"---------------{birth_date}----------------")
         
     await message.answer(
         texts.ADDRESS[lang],

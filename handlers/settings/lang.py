@@ -37,7 +37,11 @@ async def lang_handler(message: Message, state: FSMContext):
         'lang': lang
     })
 
-    putUser(user_id, lang)
+    user = {
+        "lang": lang
+    }
+
+    putUser(user_id, user)
     await menu(message, state)
 
 

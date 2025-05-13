@@ -1,21 +1,24 @@
 from aiogram.types import Message
 from aiogram.dispatcher import FSMContext
+
+from loader import dp, bot
+from services.services import getUser
+from utils import texts, buttons
+from utils.env import ADMIN
 from aiogram.types import InputMediaPhoto
 
 
-from loader import dp, bot
-from utils import texts, buttons
-from services.services import getUser
-from state.state import Register
 
 
-
-@dp.message_handler(content_types=['photo'], state=Register.passport_back)
-async def passport_back_handler(message: Message, state: FSMContext):
+@dp.message_handler(lambda message: message.text in (
+    buttons.CONFIRM_UZ,
+    buttons.CONFIRM_RU
+), state="*")
+async def confirm_handler(message: Message, state: FSMContext):
     user_id = message.from_user.id
     user = getUser(user_id)
     lang = user['data'][0]['lang']
-    
+    register_id = user['data'][0]['id']
     
     data = await state.get_data()
     name = data.get('name')
@@ -26,11 +29,7 @@ async def passport_back_handler(message: Message, state: FSMContext):
     address = data.get('address')
     branch = data.get('branch')
     passport_front = data.get('passport_front')
-    passport_back = message.photo[-1].file_id
-    
-    await state.update_data({
-        "passport_back": passport_back
-    })
+    passport_back = data.get("passport_back")
     
     caption = texts.summary(
         lang=lang,
@@ -51,12 +50,23 @@ async def passport_back_handler(message: Message, state: FSMContext):
     ]
     
     await bot.send_media_group(
-        chat_id=user_id,
+        chat_id=ADMIN,
         media=media_group
     )
-    await message.answer(
-        texts.CONFIRM[lang],
-        reply_markup=buttons.confirm(lang)
+    await bot.send_message(
+        chat_id=ADMIN,
+        text=texts.ADMIN_CONFIRM,
+        reply_markup=buttons.admin_confirm(user_id)
     )
+    
+    
+    
+    
+    await message.answer(
+        texts.SEND_ADMIN[lang].format(register_id),
+        reply_markup=buttons.mainMenu(lang)
+    )
+    
+    
     
     

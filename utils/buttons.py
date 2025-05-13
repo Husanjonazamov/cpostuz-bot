@@ -144,3 +144,18 @@ def confirm(lang):
         
     return markup
        
+
+
+
+def admin_confirm(user_id):
+    inlines = InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(text="✅ Tasdiqlash", callback_data=f"confirm_{user_id}"),
+            ],
+            [
+                InlineKeyboardButton(text="❌ Rad etish", callback_data=f"reject_{user_id}")
+            ]
+        ]
+    )
+    return inlines

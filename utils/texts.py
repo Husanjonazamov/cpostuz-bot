@@ -176,3 +176,15 @@ CONFIRM = {
     "uz": "✅ Ma'lumotlaringiz to'g'riligini tasdiqlaysizmi?",
     "ru": "✅ Ma'lumotlaringiz to'g'riligini tasdiqlaysizmi?"
 }
+
+
+SEND_ADMIN = {
+    "uz": "🥳 Sizning #{} raqamli so'rovingiz qabul qilindi!",
+    "ru": "🥳 Ваш запрос с номером {} был принят!"
+}
+
+
+ADMIN_CONFIRM = \
+"""
+✅ Tasdiqlaysizmi? Arizani ko‘rib chiqqaningizdan so‘ng tasdiqlash yoki rad etishni tanlang.
+"""
