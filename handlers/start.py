@@ -12,13 +12,13 @@ from .menu import menu
 async def start_handler(message: Message, state: FSMContext):
     
     user_id = message.from_user.id
-    
     user = getUser(user_id)
     
-    if user:
+    if user and user.get("data") and len(user["data"]) > 0:
         await menu(message, state)
     else:
         await message.answer(
             texts.START_LANG,
             reply_markup=buttons.language()
         )
+       

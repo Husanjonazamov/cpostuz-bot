@@ -14,5 +14,4 @@ async def menu(message: Message, state: FSMContext):
     user = getUser(user_id)
     lang = user['data'][0]['lang']
     
-    
     await message.answer(texts.START[lang])
