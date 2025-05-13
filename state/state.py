@@ -8,3 +8,15 @@ class lang(StatesGroup):
     
 class Putlang(StatesGroup):
     lang = State()
+    
+    
+class Register(StatesGroup):
+    name = State()
+    phone = State()
+    passport_id = State()
+    passport_jsh = State()
+    birth_date = State()
+    address = State()
+    branch = State()
+    passport_front = State()
+    passport_back = State()
