@@ -213,3 +213,15 @@ SHIPMENTS = {
     "uz": "Kerakli bo'limni tanlang!",
     "ru": "Выберите нужный раздел!"
 }
+
+
+CARGO_ID = {
+    "uz": "Cargo IDni kiriting!",
+    "ru": "Введите Cargo ID!"
+}
+
+
+TRACK_ID = {
+    "uz": "Trek IDni kiriting!",
+    "ru": "Введите Trek ID!"
+}

@@ -20,3 +20,11 @@ class Register(StatesGroup):
     branch = State()
     passport_front = State()
     passport_back = State()
+    
+    
+class CargoSearch(StatesGroup):
+    cargo_id = State()
+    
+    
+class TreckSearch(StatesGroup):
+    treck_id = State()

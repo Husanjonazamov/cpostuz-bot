@@ -83,6 +83,8 @@ async def confirm_handler(message: Message, state: FSMContext):
     }
 
     putUser(user_id, user)
+    
+    await state.finish()
 
     
     
