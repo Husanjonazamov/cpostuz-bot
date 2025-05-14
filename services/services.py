@@ -25,15 +25,14 @@ def getUser(user_id):
         return
     
     
+
 def putUser(user_id, user):
     url = f"{BASE_URL}/users/update/{user_id}/"
-    response = requests.patch(url, data=user)
-    print(response.status_code)
-    if response.status_code == 200:
-        data = response.json()
-        return data
-    else:
-        return
+    
+    response = requests.patch(url, json=user)  
+    print("-dsadsa")
+    return response.json()
+    
     
     
 def getBranch(lang):
@@ -54,9 +53,9 @@ def getBranch(lang):
     
     
 def getBranchId(branch_name):
-    url = f"{BASE_URL}/branch/{branch_name}"
+    url = f"{BASE_URL}/branch/{branch_name}/"
     response = requests.get(url)
-    
+    print(response.status_code)
     if response.status_code == 200:
         data = response.json()
         return data

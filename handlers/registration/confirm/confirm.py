@@ -2,10 +2,11 @@ from aiogram.types import Message
 from aiogram.dispatcher import FSMContext
 
 from loader import dp, bot
-from services.services import getUser, putUser
+from services.services import getUser, putUser, getBranchId
 from utils import texts, buttons
 from utils.env import ADMIN
 from aiogram.types import InputMediaPhoto
+from state.state import Register
 
 
 
@@ -65,6 +66,24 @@ async def confirm_handler(message: Message, state: FSMContext):
         reply_markup=buttons.mainMenu(lang)
     )
     
+    branch_data = getBranchId(branch)
+    branch_id = branch_data['data']['branch_id']
+    print(branch_id)
+
+    user = {
+        "name": name,
+        "phone": phone,
+        "passport_id": passport_id,
+        "passport_jsh": passport_jsh,
+        "birth_date": birth_date,
+        "address": address,
+        "branch": branch_id,
+        "passport_front": passport_front,
+        "passport_back": passport_back
+    }
+
+    putUser(user_id, user)
+
     
     
     
