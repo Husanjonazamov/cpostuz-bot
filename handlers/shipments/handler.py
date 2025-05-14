@@ -7,6 +7,7 @@ from services.services import getUser, getCategory
 
 
 
+
 @dp.message_handler(lambda message: message.text in (
     buttons.CHECK_SHIPMENTS,
     buttons.CHECK_SHIPMENTS_RU
