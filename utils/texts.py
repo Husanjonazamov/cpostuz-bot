@@ -206,3 +206,10 @@ ADMIN_CANCELLED  = \
 """
 Siz #{} arizani bekor qildingiz
 """
+
+
+
+SHIPMENTS = {
+    "uz": "Kerakli bo'limni tanlang!",
+    "ru": "Выберите нужный раздел!"
+}

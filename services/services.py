@@ -61,3 +61,19 @@ def getBranchId(branch_name):
         return data
     else:
         return []
+    
+    
+def getCategory(lang):
+    url = f"{BASE_URL}/category/"
+    
+    headers = {
+        "Accept-Language": lang  
+    }
+
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        data = response.json()
+        return data['data']['results']
+    else:
+        return

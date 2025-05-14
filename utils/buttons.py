@@ -175,3 +175,22 @@ def edit_accepted():
     )
     
     return new_markup
+
+
+def shipments(lang, category):
+    markup = ReplyKeyboardMarkup(
+        resize_keyboard=True
+    )
+    for category_item in category:
+        name = category_item['name']
+
+        button = KeyboardButton(name)
+        markup.add(button)
+    
+    if lang == "uz":
+        markup.add(BACK_UZ)
+    else:
+        markup.add(BACK_RU)
+        
+    return markup
+    
