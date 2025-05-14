@@ -1,3 +1,3 @@
 from . import handler
-from . import cargoid
-from . import trekid
+from . import cargo
+from . import treck

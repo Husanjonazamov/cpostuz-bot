@@ -225,3 +225,20 @@ TRACK_ID = {
     "uz": "Trek IDni kiriting!",
     "ru": "Введите Trek ID!"
 }
+
+
+SEARCH_SUCCESFULL = {
+    "uz": "✅ Sizning ushbu raqamli buyurtmangiz yetib keldi.",
+    "ru": "✅ Ваш заказ с этим номером прибыл.",
+}
+
+SEARCH_NOT = {
+    "uz": "❌ Kechirasiz, siz kiritgan raqamli buyurtma topilmadi. Iltimos, raqamni qayta tekshirib ko‘ring.",
+    "ru": "❌ Извините, заказ с этим номером не найден. Пожалуйста, проверьте номер и попробуйте снова.",
+}
+
+
+BAND_TRECK = {
+    "uz": "❌ Kechirasiz, bu bo‘lim hozircha yopiq.",
+    "ru": "❌ Извините, этот раздел сейчас закрыт."
+}

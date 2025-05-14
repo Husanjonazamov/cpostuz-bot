@@ -77,3 +77,21 @@ def getCategory(lang):
         return data['data']['results']
     else:
         return
+    
+    
+    
+def SearchId(cargo_id):
+    url = f"{BASE_URL}/excel-file/me/"
+    id = int(cargo_id)
+    try:
+        response = requests.post(url, json={"id": id}, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        if data and "data" in data and data["data"]: 
+            return data
+        else:
+            return None
+    except Exception as e:
+        print(f"Xatolik: {e}")
+        return None

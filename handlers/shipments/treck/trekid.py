@@ -8,14 +8,7 @@ from state.state import TreckSearch
 
 
 
-CARGO_UZ = "🔍 TrekID bo'yicha qidirish" 
-CARGO_RU = "🔍 Поиск по трекиду"
-
-
-@dp.message_handler(lambda message: message.text in (
-    CARGO_UZ,
-    CARGO_RU
-), state="*")
+@dp.message_handler(content_types=['text'], state=TreckSearch.treck_id)
 async def shipments(message: Message, state: FSMContext):
     user_id = message.from_user.id
     user = getUser(user_id)
@@ -23,7 +16,7 @@ async def shipments(message: Message, state: FSMContext):
 
 
     await message.answer(
-        texts.TRACK_ID[lang],
+        texts.BAND_TRECK[lang],
         reply_markup=buttons.mainBack(lang)
     )    
     await TreckSearch.treck_id.set()

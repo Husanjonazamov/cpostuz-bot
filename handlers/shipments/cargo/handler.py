@@ -16,11 +16,11 @@ CARGO_RU = "🔍 Поиск по CargoID"
     CARGO_UZ,
     CARGO_RU
 ), state="*")
+
 async def shipments(message: Message, state: FSMContext):
     user_id = message.from_user.id
     user = getUser(user_id)
     lang = user['data'][0]['lang']
-
 
     await message.answer(
         texts.CARGO_ID[lang],
