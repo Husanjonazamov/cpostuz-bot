@@ -11,3 +11,4 @@ from . import passport_back
 
 # folder
 from . import confirm
+from . import accepted

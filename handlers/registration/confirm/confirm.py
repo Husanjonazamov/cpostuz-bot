@@ -2,7 +2,7 @@ from aiogram.types import Message
 from aiogram.dispatcher import FSMContext
 
 from loader import dp, bot
-from services.services import getUser
+from services.services import getUser, putUser
 from utils import texts, buttons
 from utils.env import ADMIN
 from aiogram.types import InputMediaPhoto
@@ -16,9 +16,9 @@ from aiogram.types import InputMediaPhoto
 ), state="*")
 async def confirm_handler(message: Message, state: FSMContext):
     user_id = message.from_user.id
-    user = getUser(user_id)
-    lang = user['data'][0]['lang']
-    register_id = user['data'][0]['id']
+    users = getUser(user_id)
+    lang = users['data'][0]['lang']
+    register_id = users['data'][0]['id']
     
     data = await state.get_data()
     name = data.get('name')
@@ -58,8 +58,6 @@ async def confirm_handler(message: Message, state: FSMContext):
         text=texts.ADMIN_CONFIRM,
         reply_markup=buttons.admin_confirm(user_id)
     )
-    
-    
     
     
     await message.answer(

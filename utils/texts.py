@@ -188,3 +188,9 @@ ADMIN_CONFIRM = \
 """
 ✅ Tasdiqlaysizmi? Arizani ko‘rib chiqqaningizdan so‘ng tasdiqlash yoki rad etishni tanlang.
 """
+
+
+ACCEPTED = {
+    "uz": "✅ Sizning N{} raqamli so‘rovingiz muvoffaqiyatli qabul qilindi! Tez orada siz bilan bog‘lanamiz. 😊",
+    "ru": "✅ Ваша заявка с номером N{} успешно принята! Мы скоро с вами свяжемся. 😊"
+}
