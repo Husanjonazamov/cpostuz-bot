@@ -21,4 +21,4 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
         text=texts.ACCEPTED[lang].format(register_id)
     )
     
-   
+    await callback.message.edit_reply_markup(reply_markup=buttons.edit_accepted())

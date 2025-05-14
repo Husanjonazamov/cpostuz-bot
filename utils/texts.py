@@ -194,3 +194,15 @@ ACCEPTED = {
     "uz": "✅ Sizning N{} raqamli so‘rovingiz muvoffaqiyatli qabul qilindi! Tez orada siz bilan bog‘lanamiz. 😊",
     "ru": "✅ Ваша заявка с номером N{} успешно принята! Мы скоро с вами свяжемся. 😊"
 }
+
+
+CANCELLED = {
+    "uz": "Hurmatli mijoz sizning #{} so'rovingiz rad etildi!\n\n📝 Sabab: Passport ma'lumotlari siz yozgan ma'lumotlarga to'g'ri kelmaganligi uchun bo'lishi mumkin!\nIltimos passport ma'lumotlaringiz bo'yicha ro'yxatdan o'ting.",
+    "ru": "Уважаемый клиент, ваш запрос №{} был отклонён!\n\n📝 Причина: Возможно, данные паспорта не соответствуют введённой вами информации.\nПожалуйста, повторно зарегистрируйтесь, указав корректные паспортные данные."
+}
+
+
+ADMIN_CANCELLED  = \
+"""
+Siz #{} arizani bekor qildingiz
+"""

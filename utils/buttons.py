@@ -159,3 +159,19 @@ def admin_confirm(user_id):
         ]
     )
     return inlines
+
+
+
+def edit_cancelled():
+    new_markup = InlineKeyboardMarkup().add(
+        InlineKeyboardButton(text="❌ Ariza rad etildi", callback_data="no_action")
+    )
+    
+    return new_markup
+
+def edit_accepted():
+    new_markup = InlineKeyboardMarkup().add(
+        InlineKeyboardButton(text="✅ Ariza qabul qilindi", callback_data="accepted_status")
+    )
+    
+    return new_markup
