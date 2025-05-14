@@ -50,3 +50,15 @@ def getBranch(lang):
         return data["data"]['results']
     else:
         return []
+    
+    
+    
+def getBranchId(branch_name):
+    url = f"{BASE_URL}/branch/{branch_name}"
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        return []
