@@ -4,7 +4,8 @@ from aiogram.dispatcher import FSMContext
 from utils import texts, buttons
 from services.services import getUser, putUser, getBranchId
 from loader import dp, bot
-from state.state import Register
+from state.state import Register, AdminVerifyCode
+from utils.env import ADMIN
 
 
 
@@ -14,11 +15,12 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
     user_id = callback_data.split("_")[1]
     user = getUser(user_id)
     lang = user['data'][0]['lang']
-    register_id = user['data'][0]['id']
+    
+    await state.update_data({"user_id": user_id})
 
     await bot.send_message(
-        chat_id=user_id,
-        text=texts.ACCEPTED[lang].format(register_id)
+        chat_id=ADMIN,
+        text=texts.ENTER_CODE[lang]
     )
-    
+    await AdminVerifyCode.code.set()
     await callback.message.edit_reply_markup(reply_markup=buttons.edit_accepted())

@@ -33,3 +33,8 @@ class TreckSearch(StatesGroup):
     
 class ExcelCreateState(StatesGroup):
     excel = State()
+    
+    
+class AdminVerifyCode(StatesGroup):
+    user_id = State()
+    code = State()

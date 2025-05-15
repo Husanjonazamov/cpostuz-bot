@@ -84,7 +84,7 @@ def getCategory(lang):
     
 def SearchId(cargo_id):
     url = f"{BASE_URL}/excel-file/me/"
-    id = int(cargo_id)
+    id = str(cargo_id)
     try:
         response = requests.post(url, json={"id": id}, timeout=10)
         response.raise_for_status()
