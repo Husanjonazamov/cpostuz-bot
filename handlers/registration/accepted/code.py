@@ -9,6 +9,7 @@ from utils.env import ADMIN
 
 
 
+
 @dp.message_handler(content_types=['text'], state=AdminVerifyCode.code)
 async def accepted(message: Message, state: FSMContext):
     user = getUser(ADMIN)
@@ -18,15 +19,19 @@ async def accepted(message: Message, state: FSMContext):
     user_id = data.get('user_id')
     
     code = message.text
-    print(user_id)
     await bot.send_message(
         chat_id=user_id,
         text=texts.ACCEPTED[lang].format(code)
     )
     
     await message.answer(
-        "tasdiqlash kodi yuborildi"
+        texts.SEND_CODE[lang]
     )
+    user = {
+        "cargo_code": code
+    }
+    
+    putUser(user_id, user)
     
     await state.finish()
     

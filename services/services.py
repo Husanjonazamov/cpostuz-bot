@@ -81,7 +81,6 @@ def getCategory(lang):
 
     
     
-    
 def SearchId(cargo_id):
     url = f"{BASE_URL}/excel-file/me/"
     id = str(cargo_id)
@@ -111,4 +110,25 @@ def ExcelCreate(file_obj, file_name):
         return response.json()
     except Exception as e:
         print(f"Excel file yyuklashda xatolik: {e}")
+        return None
+
+
+
+def getUserAll():
+    url = f"{BASE_URL}/users/"
+    
+    response = requests.get(url)
+    
+    print(response.json())  
+    return response.json()
+
+
+
+def getIdBranch(branch_id):
+    url = f"{BASE_URL}/branch/branch-id/{branch_id}/"
+    response = requests.get(url)
+    
+    if response.status_code == 200:
+        return response.json()
+    else:
         return None

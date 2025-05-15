@@ -196,8 +196,8 @@ ENTER_CODE = {
 
 
 ACCEPTED = {
-    "uz": "✅ Sizning #{} raqamli so‘rovingiz muvoffaqiyatli qabul qilindi! Tez orada siz bilan bog‘lanamiz. 😊",
-    "ru": "✅ Ваша заявка с номером #{} успешно принята! Мы скоро с вами свяжемся. 😊"
+    "uz": "✅ Sizning #{}{} raqamli so‘rovingiz muvoffaqiyatli qabul qilindi! Tez orada siz bilan bog‘lanamiz. 😊",
+    "ru": "✅ Ваша заявка с номером #{}{} успешно принята! Мы скоро с вами свяжемся. 😊"
 }
 
 
@@ -251,4 +251,15 @@ BAND_TRECK = {
 EXCEL = {
     "uz": "Iltimos, Excel faylni kiriting 📥",
     "ru": "Пожалуйста, загрузите Excel файл 📥"
+}
+
+OLD_REGISTER = {
+    "uz": "❗️Siz allaqachon ro'yxatdan o'tgansiz. ID: #{}",
+    "ru": "❗️Вы уже зарегистрированы. ID: #{}"
+}
+
+
+SEND_CODE = {
+    "uz": "✅ Tasdiqlash kodi yuborildi.",
+    "ru": "✅ Код подтверждения отправлен."
 }

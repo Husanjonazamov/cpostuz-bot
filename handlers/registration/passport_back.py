@@ -5,7 +5,7 @@ from aiogram.types import InputMediaPhoto
 
 from loader import dp, bot
 from utils import texts, buttons
-from services.services import getUser
+from services.services import getUser, getUserAll
 from state.state import Register
 from utils.env import PASSPORT_FRONT_IMAGE
 
@@ -28,6 +28,17 @@ async def passport_back_handler(message: Message, state: FSMContext):
     passport_front = data.get('passport_front')
     
     
+    
+    all_users = getUserAll()
+    for u in all_users['data']['results']:
+        code = u['cargo_code']
+        print(code)
+        if u['passport_id'] == passport_id and u['passport_jsh'] == passport_jsh:
+            await message.answer(texts.OLD_REGISTER[lang].format(code))
+            await state.finish()
+            return
+    
+    
     if message.text in [buttons.BACK_BASE_RU, buttons.BACK_BASE_UZ]:
         await message.answer_photo(
             photo=PASSPORT_FRONT_IMAGE,
@@ -38,6 +49,7 @@ async def passport_back_handler(message: Message, state: FSMContext):
         await Register.passport_front.set()
     
     else:
+                
         if message.photo:
             passport_back = message.photo[-1].file_id
         await state.update_data({
