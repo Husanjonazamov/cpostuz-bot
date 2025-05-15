@@ -145,9 +145,9 @@ def branch(branches, lang):
         markup.add(button)
     
     if lang == "uz":
-        markup.add(BACK_UZ)
+        markup.add(BACK_BASE_UZ)
     else:
-        markup.add(BACK_RU)
+        markup.add(BACK_BASE_RU)
         
     return markup
     

@@ -17,14 +17,22 @@ async def branch_handler(message: Message, state: FSMContext):
     
     branch = message.text
     
-    await state.update_data({
-        "branch": branch
-    })
+    if message.text in [buttons.BACK_BASE_RU, buttons.BACK_BASE_UZ]:
+        await message.answer(
+            texts.ADDRESS[lang],
+            reply_markup=buttons.baseBack(lang)
+        )
+        await Register.address.set()
+        
+    else:
+        await state.update_data({
+            "branch": branch
+        })
+        
+        await message.answer_photo(
+            photo=PASSPORT_FRONT_IMAGE,
+            caption=texts.PASSPORT_FRONT[lang],
+            reply_markup=buttons.baseBack(lang)
+        )
     
-    await message.answer_photo(
-        photo=PASSPORT_FRONT_IMAGE,
-        caption=texts.PASSPORT_FRONT[lang],
-        reply_markup=buttons.mainBack(lang)
-    )
-   
-    await Register.passport_front.set()
+        await Register.passport_front.set()

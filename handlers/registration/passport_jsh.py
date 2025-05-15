@@ -42,7 +42,7 @@ async def passport_jsh_handler(message: Message, state: FSMContext):
         
         await message.answer(
             texts.REQUEST_BIRTHDAY[lang],
-            reply_markup=buttons.mainBack(lang)
+            reply_markup=buttons.baseBack(lang)
         )
         
         await Register.birth_date.set()
