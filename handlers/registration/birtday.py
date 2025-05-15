@@ -34,6 +34,6 @@ async def birth_date_handler(message: Message, state: FSMContext):
             
         await message.answer(
             texts.ADDRESS[lang],
-            reply_markup=buttons.mainBack(lang)
+            reply_markup=buttons.baseBack(lang)
         )
         await Register.address.set()
