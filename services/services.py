@@ -74,9 +74,12 @@ def getCategory(lang):
     
     if response.status_code == 200:
         data = response.json()
-        return data['data']['results']
+        results = data['data']['results']
+        active_categories = [cat for cat in results if cat.get('is_active') == True]
+        return active_categories
     else:
         return
+
     
     
     
