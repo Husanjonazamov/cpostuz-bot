@@ -20,6 +20,7 @@ class Register(StatesGroup):
     branch = State()
     passport_front = State()
     passport_back = State()
+    confirm = State()
     
     
 class CargoSearch(StatesGroup):

@@ -38,7 +38,8 @@ async def passport_back_handler(message: Message, state: FSMContext):
         await Register.passport_front.set()
     
     else:
-        passport_back = message.photo[-1].file_id
+        if message.photo:
+            passport_back = message.photo[-1].file_id
         await state.update_data({
             "passport_back": passport_back
         })
@@ -69,5 +70,5 @@ async def passport_back_handler(message: Message, state: FSMContext):
             texts.CONFIRM[lang],
             reply_markup=buttons.confirm(lang)
         )
-        
+        await Register.confirm.set()
         

@@ -14,7 +14,7 @@ from state.state import Register
 @dp.message_handler(lambda message: message.text in (
     buttons.CONFIRM_UZ,
     buttons.CONFIRM_RU
-), state="*")
+), state=Register.confirm)
 async def confirm_handler(message: Message, state: FSMContext):
     user_id = message.from_user.id
     users = getUser(user_id)
@@ -63,7 +63,7 @@ async def confirm_handler(message: Message, state: FSMContext):
     
     await message.answer(
         texts.SEND_ADMIN[lang].format(register_id),
-        reply_markup=buttons.mainMenu(lang)
+        reply_markup=buttons.mainMenu(lang, user_id)
     )
     
     branch_data = getBranchId(branch)

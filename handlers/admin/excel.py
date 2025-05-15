@@ -10,7 +10,7 @@ from state.state import ExcelCreateState
 
 
 
-@dp.message_handler(content_types=['document'], state=ExcelCreateState.excel)
+@dp.message_handler(content_types=['document'], state="*")
 async def excel_(message: Message, state: FSMContext):
     user_id = message.from_user.id
     user = getUser(user_id)
