@@ -2,7 +2,7 @@
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, InlineKeyboardButton
 from datetime import datetime
 import calendar
-
+from utils.env import ADMIN
 
 
 
@@ -52,32 +52,41 @@ def language():
 CHECK_SHIPMENTS = "📦 Jo'natmalarni tekshirish"
 ID_REGISTRATION = "🪪 ID / Ro‘yxatdan o‘tish"
 SETTINGS = "⚙️ Sozlamalar"
+EXCEL = "📥 Excel file yuklash"
 
 CHECK_SHIPMENTS_RU = "📦 Проверить отправления"
 ID_REGISTRATION_RU = "🪪 ID / Регистрация"
 SETTINGS_RU = "⚙️ Настройки"
+EXCEL_RU = "📥 Загрузить Excel файл"
 
 
-def mainMenu(lang):
+
+
+def mainMenu(lang, user_id):
     if lang == 'uz':
-        markup = ReplyKeyboardMarkup(
-            keyboard=[
-                [KeyboardButton(text=CHECK_SHIPMENTS)],
-                [KeyboardButton(text=ID_REGISTRATION)],
-                [KeyboardButton(text=SETTINGS)]
-            ],
-            resize_keyboard=True
-        )
-    else:  
-        markup = ReplyKeyboardMarkup(
-            keyboard=[
-                [KeyboardButton(text=CHECK_SHIPMENTS_RU)],
-                [KeyboardButton(text=ID_REGISTRATION_RU)],
-                [KeyboardButton(text=SETTINGS_RU)]
-            ],
-            resize_keyboard=True
-        )
+        buttons = [
+            [KeyboardButton(text=CHECK_SHIPMENTS)],
+            [KeyboardButton(text=ID_REGISTRATION)],
+            [KeyboardButton(text=SETTINGS)]
+        ]
+        excel_button = KeyboardButton(text=EXCEL)
+    else:
+        buttons = [
+            [KeyboardButton(text=CHECK_SHIPMENTS_RU)],
+            [KeyboardButton(text=ID_REGISTRATION_RU)],
+            [KeyboardButton(text=SETTINGS_RU)]
+        ]
+        excel_button = KeyboardButton(text=EXCEL_RU)
+
+    if user_id == ADMIN:
+        buttons.append([excel_button])
+
+    markup = ReplyKeyboardMarkup(
+        keyboard=buttons,
+        resize_keyboard=True
+    )
     return markup
+
 
 
 

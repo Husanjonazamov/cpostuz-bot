@@ -28,3 +28,7 @@ class CargoSearch(StatesGroup):
     
 class TreckSearch(StatesGroup):
     treck_id = State()
+    
+    
+class ExcelCreateState(StatesGroup):
+    excel = State()

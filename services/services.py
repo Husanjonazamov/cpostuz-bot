@@ -95,3 +95,18 @@ def SearchId(cargo_id):
     except Exception as e:
         print(f"Xatolik: {e}")
         return None
+
+
+
+def ExcelCreate(file_obj, file_name):
+    url = f"{BASE_URL}/excel/create/"
+    files = {
+        'file': (file_name, file_obj, 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    }
+    try:
+        response = requests.post(url, files=files)
+        response.raise_for_status()
+        return response.json()
+    except Exception as e:
+        print(f"Excel file yyuklashda xatolik: {e}")
+        return None

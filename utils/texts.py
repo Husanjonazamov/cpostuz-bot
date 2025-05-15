@@ -242,3 +242,8 @@ BAND_TRECK = {
     "uz": "❌ Kechirasiz, bu bo‘lim hozircha yopiq.",
     "ru": "❌ Извините, этот раздел сейчас закрыт."
 }
+
+EXCEL = {
+    "uz": "Iltimos, Excel faylni kiriting 📥",
+    "ru": "Пожалуйста, загрузите Excel файл 📥"
+}
