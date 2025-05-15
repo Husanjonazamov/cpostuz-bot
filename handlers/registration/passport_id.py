@@ -20,18 +20,25 @@ async def passport_id_handler(message: Message, state: FSMContext):
     
     passport_id = str(message.text.strip().upper())
     
-    if not PASSPORT_REGEX.match(passport_id):
-        await message.answer(texts.INVALID_PASSPORT_ID[lang])
-        return
-    
-    await state.update_data({
-        "passport_id": passport_id
-    })
-    
-    await message.answer_photo(
-        photo=PASSPORT_JSH_IMAGE,
-        caption=texts.PASSPORT_JSH[lang],
-        reply_markup=buttons.mainBack(lang)
-    )
-    
-    await Register.passport_jsh.set()
+    if message.text in [buttons.BACK_BASE_RU, buttons.BACK_BASE_UZ]:
+        await message.answer(
+        texts.REGISTER_PHONE[lang],
+        reply_markup=buttons.register_phone(lang)
+        )
+        await Register.phone.set()
+    else:
+        if not PASSPORT_REGEX.match(passport_id):
+            await message.answer(texts.INVALID_PASSPORT_ID[lang])
+            return
+        
+        await state.update_data({
+            "passport_id": passport_id
+        })
+        
+        await message.answer_photo(
+            photo=PASSPORT_JSH_IMAGE,
+            caption=texts.PASSPORT_JSH[lang],
+            reply_markup=buttons.baseBack(lang)
+        )
+        
+        await Register.passport_jsh.set()

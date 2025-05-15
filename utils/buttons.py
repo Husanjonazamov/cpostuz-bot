@@ -14,6 +14,29 @@ BACK_UZ = "🔙 Ortga"
 BACK_RU = "🔙 Назад"
 
 
+BACK_BASE_UZ = "⬅️ Ortga"
+BACK_BASE_RU = "⬅️ Назад"
+
+
+def baseBack(lang):
+    if lang == "uz":
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text=BACK_BASE_UZ)]
+            ],
+            resize_keyboard=True
+        )
+    else:
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text=BACK_BASE_RU)]
+            ],
+            resize_keyboard=True
+        )
+
+    return markup
+
+
 
 def mainBack(lang):
     if lang == "uz":
@@ -95,7 +118,7 @@ def register_phone(lang):
         markup = ReplyKeyboardMarkup(
             keyboard=[
                 [KeyboardButton(text="📤 Telefon raqamni yuborish", request_contact=True)],
-                [KeyboardButton(text=BACK_UZ)]
+                [KeyboardButton(text=BACK_BASE_UZ)]
             ],
             resize_keyboard=True
         )
@@ -103,7 +126,7 @@ def register_phone(lang):
         markup = ReplyKeyboardMarkup(
             keyboard=[
                 [KeyboardButton(text="📤 Отправить номер телефона", request_contact=True)],
-                [KeyboardButton(text=BACK_RU)]
+                [KeyboardButton(text=BACK_BASE_UZ)]
             ],
             resize_keyboard=True
         )

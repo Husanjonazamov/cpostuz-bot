@@ -65,7 +65,6 @@ def getBranchId(branch_name):
     
 def getCategory(lang):
     url = f"{BASE_URL}/category/"
-    
     headers = {
         "Accept-Language": lang  
     }

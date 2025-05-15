@@ -8,6 +8,7 @@ from loader import dp, bot
 from utils.env import PASSPORT_ID_IMAGE
 import re
 
+
 PHONE_REGEX = re.compile(r'^\+?998\d{9}$')
 
 
@@ -16,27 +17,36 @@ async def phone(message: Message, state: FSMContext):
     user_id = message.from_user.id
     user = getUser(user_id)
     lang = user['data'][0]['lang']
-
-    if message.contact:
-        phone = message.contact.phone_number
-    else:
-        text = str(message.text).strip()
-        
-        if not PHONE_REGEX.match(text):
-            await message.answer(
-                texts.INVALID_PHONE[lang],
-            )
-            return
-        phone = text
-        
-    await state.update_data({
-        "phone": phone
-    })
     
-    await message.answer_photo(
-        photo=PASSPORT_ID_IMAGE,
-        caption=texts.PASSPORT_ID[lang],
+    if message.text in [buttons.BACK_BASE_UZ, buttons.BACK_BASE_RU]:
+        await message.answer(
+        texts.REGISTER_NAME[lang],
         reply_markup=buttons.mainBack(lang)
-    )
+        )
+        
+        await Register.name.set()
+    else:
     
-    await Register.passport_id.set()
+        if message.contact:
+            phone = message.contact.phone_number
+        else:
+            text = str(message.text).strip()
+            
+            if not PHONE_REGEX.match(text):
+                await message.answer(
+                    texts.INVALID_PHONE[lang],
+                )
+                return
+            phone = text
+            
+        await state.update_data({
+            "phone": phone
+        })
+        
+        await message.answer_photo(
+            photo=PASSPORT_ID_IMAGE,
+            caption=texts.PASSPORT_ID[lang],
+            reply_markup=buttons.baseBack(lang)
+        )
+        
+        await Register.passport_id.set()

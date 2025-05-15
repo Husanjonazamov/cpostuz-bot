@@ -18,15 +18,23 @@ async def address_handler(message: Message, state: FSMContext):
     
     address = message.text
     
-    await state.update_data({
-        "address": address
-    })
-    
-    branch = getBranch(lang)
-    
-    await message.answer(
-        texts.BRANCH[lang],
-        reply_markup=buttons.branch(branch, lang)
-    )
-    await Register.branch.set()
+    if message.text in [buttons.BACK_BASE_RU, buttons.BACK_BASE_UZ]:
+        await message.answer(
+            texts.REQUEST_BIRTHDAY[lang],
+            reply_markup=buttons.mainBack(lang)
+        )
+        
+        await Register.birth_date.set()
+    else:    
+        await state.update_data({
+            "address": address
+        })
+        
+        branch = getBranch(lang)
+        
+        await message.answer(
+            texts.BRANCH[lang],
+            reply_markup=buttons.branch(branch, lang)
+        )
+        await Register.branch.set()
 

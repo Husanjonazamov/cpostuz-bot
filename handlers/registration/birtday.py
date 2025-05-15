@@ -5,6 +5,7 @@ from loader import dp, bot
 from utils import texts, buttons
 from services.services import getUser
 from state.state import Register
+from utils.env import PASSPORT_JSH_IMAGE
 
 
 
@@ -17,12 +18,22 @@ async def birth_date_handler(message: Message, state: FSMContext):
     
     birth_date = message.text
     
-    await state.update_data({
-        "birth_date": birth_date
-    })
+    
+    if message.text in [buttons.BACK_BASE_RU, buttons.BACK_BASE_UZ]:
+        await message.answer_photo(
+            photo=PASSPORT_JSH_IMAGE,
+            caption=texts.PASSPORT_JSH[lang],
+            reply_markup=buttons.baseBack(lang)
+        )
         
-    await message.answer(
-        texts.ADDRESS[lang],
-        reply_markup=buttons.mainBack(lang)
-    )
-    await Register.address.set()
+        await Register.passport_jsh.set()
+    else:
+        await state.update_data({
+            "birth_date": birth_date
+        })
+            
+        await message.answer(
+            texts.ADDRESS[lang],
+            reply_markup=buttons.mainBack(lang)
+        )
+        await Register.address.set()
