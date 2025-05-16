@@ -2,7 +2,7 @@ from aiogram.types import CallbackQuery
 from aiogram.dispatcher import FSMContext
 
 from utils import texts, buttons
-from services.services import getUser, putUser, getBranchId, getIdBranch
+from services.services import getUser, putUser, getBranchId, getIdBranch, getLocation
 from loader import dp, bot
 from state.state import Register, AdminVerifyCode
 from utils.env import ADMIN
@@ -24,15 +24,33 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
     text = all_text['data']['branch_name']
     if text.lower() == 'toshobl':
         short_branch = text  
+    elif text.lower() == "toshkent":
+        short_branch = text[:4]  
     else:
         short_branch = text[:3]  
     
         
     await state.update_data({"user_id": user_id})
+    
+    accepted = getLocation()
 
+
+    for loc in accepted:
+        maps_link = loc['map_link']
+        cargo_type = loc['cargo_type']
+        post_code = loc['post_code']
+        
+    
     await bot.send_message(
-        chat_id=user_id,
-        text=texts.ACCEPTED[lang].format(short_branch, register_id)
-    )
+            chat_id=user_id,
+            text=texts.CARGO_AVIA[lang].format(
+                order_id=register_id,
+                city_code=short_branch,
+                cargo_id=register_id,
+                map_link=maps_link,
+                post_code=post_code
+            ),
+            parse_mode="HTML"
+        )
     await callback.message.edit_reply_markup(reply_markup=buttons.edit_accepted())
     await state.finish()

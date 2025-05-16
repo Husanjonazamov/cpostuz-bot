@@ -8,13 +8,12 @@ from state.state import CargoSearch
 
 
 
-CARGO_UZ = "🔍 CargoID bo'yicha qidirish" 
-CARGO_RU = "🔍 Поиск по CargoID"
+
 
 
 @dp.message_handler(lambda message: message.text in (
-    CARGO_UZ,
-    CARGO_RU
+    buttons.CARGO_UZ,
+    buttons.CARGO_RU
 ), state="*")
 
 async def shipments(message: Message, state: FSMContext):

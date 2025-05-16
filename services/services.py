@@ -132,3 +132,17 @@ def getIdBranch(branch_id):
         return response.json()
     else:
         return None
+
+
+
+def getLocation():
+    url = f"{BASE_URL}/location/"
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        all_locations = data['data']['results']
+        active_locations = [loc for loc in all_locations if loc.get('is_active') is True]
+        return active_locations
+    else:
+        return []

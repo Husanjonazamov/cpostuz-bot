@@ -21,7 +21,7 @@ async def shipments(message: Message, state: FSMContext):
 
     await message.answer(
         texts.SHIPMENTS[lang],
-        reply_markup=buttons.shipments(lang, category)
+        reply_markup=buttons.shipments(lang)
     )
     
     

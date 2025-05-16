@@ -8,13 +8,11 @@ from state.state import TreckSearch
 
 
 
-CARGO_UZ = "🔍 TrekID bo'yicha qidirish" 
-CARGO_RU = "🔍 Поиск по трекиду"
 
 
 @dp.message_handler(lambda message: message.text in (
-    CARGO_UZ,
-    CARGO_RU
+    buttons.TRECK_UZ,
+    buttons.TRECK_RU
 ), state="*")
 async def shipments(message: Message, state: FSMContext):
     user_id = message.from_user.id

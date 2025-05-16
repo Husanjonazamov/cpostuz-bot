@@ -209,20 +209,32 @@ def edit_accepted():
     return new_markup
 
 
-def shipments(lang, category):
-    markup = ReplyKeyboardMarkup(
-        resize_keyboard=True
-    )
-    for category_item in category:
-        name = category_item['name']
 
-        button = KeyboardButton(name)
-        markup.add(button)
-    
+CARGO_UZ = "🔍 CargoID bo'yicha qidirish" 
+CARGO_RU = "🔍 Поиск по CargoID"
+
+TRECK_UZ = "🔍 TrekID bo'yicha qidirish" 
+TRECK_RU = "🔍 Поиск по трекиду"
+
+
+
+def shipments(lang):
     if lang == "uz":
-        markup.add(BACK_UZ)
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text=CARGO_UZ)],
+                [KeyboardButton(text=TRECK_UZ)],
+                [KeyboardButton(text=BACK_UZ)],
+            ],resize_keyboard=True
+        )
     else:
-        markup.add(BACK_RU)
-        
+        markup = ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text=CARGO_RU)],
+                [KeyboardButton(text=TRECK_RU)],
+                [KeyboardButton(text=BACK_RU)],
+            ],resize_keyboard=True
+        )
     return markup
+   
     

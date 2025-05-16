@@ -195,10 +195,6 @@ ENTER_CODE = {
 }
 
 
-ACCEPTED = {
-    "uz": "✅ Sizning #{}{} raqamli so‘rovingiz muvoffaqiyatli qabul qilindi! Tez orada siz bilan bog‘lanamiz. 😊",
-    "ru": "✅ Ваша заявка с номером #{}{} успешно принята! Мы скоро с вами свяжемся. 😊"
-}
 
 
 CANCELLED = {
@@ -262,4 +258,35 @@ OLD_REGISTER = {
 SEND_CODE = {
     "uz": "✅ Tasdiqlash kodi yuborildi.",
     "ru": "✅ Код подтверждения отправлен."
+}
+
+
+
+
+CARGO_AVIA = {
+    "uz": """<b>№{order_id} so'rovingiz bo'yicha sizga</b>
+
+✈️🆔 <b>Avia Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+✈️ <b>Avia sklad manzili:</b>
+收货人: <code>{city_code}{cargo_id}</code>  
+手机号码: <code>18335530701</code>  
+<a href="{map_link}">北京市顺义区南法信旭辉空港中心C座1004 {city_code}{cargo_id}📌</a>  
+(ushbu stiker yonidagi matnga bosish orqali manzilni ko‘chirib olishingiz mumkin)
+
+<b>Avia post code:</b> <code>{post_code}</code>📌
+""",
+
+    "ru": """<b>По вашему запросу №{order_id} предоставлена информация</b>
+
+✈️🆔 <b>Avia Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+✈️ <b>Адрес авиа склада:</b>  
+Получатель: <code>{city_code}{cargo_id}</code>  
+Телефон: <code>18335530701</code>  
+<a href="{map_link}">北京市顺义区南法信旭辉空港中心C座1004 {city_code}{cargo_id}📌</a>  
+(нажмите на текст рядом со стикером, чтобы скопировать адрес)
+
+<b>Avia почтовый индекс:</b> <code>{post_code}</code>📌
+"""
 }
