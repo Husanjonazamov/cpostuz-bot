@@ -138,7 +138,7 @@ def getIdBranch(branch_id):
 def getLocation():
     url = f"{BASE_URL}/location/"
     response = requests.get(url)
-
+    
     if response.status_code == 200:
         data = response.json()
         all_locations = data['data']['results']

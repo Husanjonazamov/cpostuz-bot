@@ -271,7 +271,7 @@ CARGO_AVIA = {
 ✈️ <b>Avia sklad manzili:</b>
 收货人: <code>{city_code}{cargo_id}</code>  
 手机号码: <code>18335530701</code>  
-<a href="{map_link}">北京市顺义区南法信旭辉空港中心C座1004 {city_code}{cargo_id}📌</a>  
+<code><a href="{map_link}">北京市顺义区南法信旭辉空港中心C座1004 {city_code}{cargo_id}📌</a>  </code>
 (ushbu stiker yonidagi matnga bosish orqali manzilni ko‘chirib olishingiz mumkin)
 
 <b>Avia post code:</b> <code>{post_code}</code>📌
@@ -300,8 +300,9 @@ CARGO_AVTO = {
 🚗🆔 <b>Avto Cargo ID:</b> <code>{city_code}{cargo_id}</code>
 
 🚗 <b>Avto sklad manzili:</b>  
+<code>
 收件人∶吴彦祖AT(<code>{city_code}{cargo_id}</code>)  
-地址∶广州市白云区龙归街道南村攀龙六巷30号AТ(<code>{city_code}{cargo_id}</code>)  
+地址∶广州市白云区龙归街道南村攀龙六巷30号AТ</code>(<code>{city_code}{cargo_id}</code>)  
 电话: <code>18023847617</code>📌  
 (ushbu stiker yonidagi matnga bosish orqali manzilni ko‘chirib olishingiz mumkin)
 
@@ -334,4 +335,64 @@ MESSAGES = \
     """
     Siz hali obuna bo'lmadingiz
     """
+
+
+CARGO_INFO = {
+    "uz": """
+<b>№{order_id} so'rovingiz bo‘yicha sizga</b>
+
+✈️🆔 <b>Avia Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+✈️ <b>Avia sklad manzili:</b>
+收货人: <code>{city_code}{cargo_id}</code>  
+手机号码: <code>18335530701</code>  
+<code><a href="{cargo_avia_maps_link}">北京市顺义区南法信旭辉空港中心C座1004 {city_code}{cargo_id}📌</a></code>  
+(ushbu stiker yonidagi matnga bosish orqali manzilni ko‘chirib olishingiz mumkin)
+
+<b>Avia post code:</b> <code>{cargo_avia_post_code}</code>📌
+
+**************
+
+<b>№{order_id} so'rovingiz bo‘yicha sizga</b>
+
+🚗🆔 <b>Avto Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+🚗 <b>Avto sklad manzili:</b>  
+<code>
+收件人∶吴彦祖AT(<code>{city_code}{cargo_id}</code>)  
+地址∶广州市白云区龙归街道南村攀龙六巷30号AТ</code>(<code>{city_code}{cargo_id}</code>)  
+电话: <code>18023847617</code>📌  
+(ushbu stiker yonidagi matnga bosish orqali manzilni ko‘chirib olishingiz mumkin)
+
+<b>Avto post code:</b> <code>{cargo_avto_post_code}</code>📌
+""",
+
+    "ru": """
+<b>По вашему запросу №{order_id} предоставлена информация</b>
+
+✈️🆔 <b>Avia Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+✈️ <b>Адрес авиа склада:</b>  
+Получатель: <code>{city_code}{cargo_id}</code>  
+Телефон: <code>18335530701</code>  
+<a href="{cargo_avia_maps_link}">北京市顺义区南法信旭辉空港中心C座1004 {city_code}{cargo_id}📌</a>  
+(нажмите на текст рядом со стикером, чтобы скопировать адрес)
+
+<b>Avia почтовый индекс:</b> <code>{cargo_avia_post_code}</code>📌
+
+*******
+
+<b>По вашему запросу №{order_id} предоставлена информация</b>
+
+🚗🆔 <b>Avto Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+🚗 <b>Адрес авто склада:</b>  
+Получатель: 吴彦祖AT(<code>{city_code}{cargo_id}</code>)  
+Адрес: 广州市白云区龙归街道南村攀龙六巷30号AТ(<code>{city_code}{cargo_id}</code>)  
+Телефон: <code>18023847617</code>📌  
+(нажмите на текст рядом со стикером, чтобы скопировать адрес)
+
+<b>Avto почтовый индекс:</b> <code>{cargo_avto_post_code}</code>📌
+"""
+}
 
