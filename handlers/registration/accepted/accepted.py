@@ -41,16 +41,31 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
         post_code = loc['post_code']
         
     
-    await bot.send_message(
-            chat_id=user_id,
-            text=texts.CARGO_AVIA[lang].format(
-                order_id=register_id,
-                city_code=short_branch,
-                cargo_id=register_id,
-                map_link=maps_link,
-                post_code=post_code
-            ),
-            parse_mode="HTML"
-        )
+    if cargo_type == "Avia":
+        await bot.send_message(
+                chat_id=user_id,
+                text=texts.CARGO_AVIA[lang].format(
+                    order_id=register_id,
+                    city_code=short_branch,
+                    cargo_id=register_id,
+                    map_link=maps_link,
+                    post_code=post_code
+                ),
+                parse_mode="HTML"
+            )
+    else:
+        await bot.send_message(
+                chat_id=user_id,
+                text=texts.CARGO_AVTO[lang].format(
+                    order_id=register_id,
+                    city_code=short_branch,
+                    cargo_id=register_id,
+                    map_link=maps_link,
+                    post_code=post_code
+                ),
+                parse_mode="HTML"
+            )
     await callback.message.edit_reply_markup(reply_markup=buttons.edit_accepted())
     await state.finish()
+    
+    

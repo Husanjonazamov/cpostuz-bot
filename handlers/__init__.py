@@ -8,3 +8,4 @@ from . import shipments
 
 # admin
 from . import admin
+from . import channel

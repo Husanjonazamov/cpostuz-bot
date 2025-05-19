@@ -290,3 +290,48 @@ CARGO_AVIA = {
 <b>Avia почтовый индекс:</b> <code>{post_code}</code>📌
 """
 }
+
+
+
+
+CARGO_AVTO = {
+    "uz": """<b>№{order_id} so'rovingiz bo'yicha sizga</b>
+
+🚗🆔 <b>Avto Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+🚗 <b>Avto sklad manzili:</b>  
+收件人∶吴彦祖AT(<code>{city_code}{cargo_id}</code>)  
+地址∶广州市白云区龙归街道南村攀龙六巷30号AТ(<code>{city_code}{cargo_id}</code>)  
+电话: <code>18023847617</code>📌  
+(ushbu stiker yonidagi matnga bosish orqali manzilni ko‘chirib olishingiz mumkin)
+
+<b>Avto post code:</b> <code>{post_code}</code>📌
+""",
+
+    "ru": """<b>По вашему запросу №{order_id} предоставлена информация</b>
+
+🚗🆔 <b>Avto Cargo ID:</b> <code>{city_code}{cargo_id}</code>
+
+🚗 <b>Адрес авто склада:</b>  
+Получатель: 吴彦祖AT(<code>{city_code}{cargo_id}</code>)  
+Адрес: 广州市白云区龙归街道南村攀龙六巷30号AТ(<code>{city_code}{cargo_id}</code>)  
+Телефон: <code>18023847617</code>📌  
+(нажмите на текст рядом со стикером, чтобы скопировать адрес)
+
+<b>Avto почтовый индекс:</b> <code>{post_code}</code>📌
+"""
+}
+
+
+
+CHANNEL = {
+    'uz': "❗️ Iltimos, kanalga obuna bo'ling:",
+    'ru': "❗️ Пожалуйста, подпишитесь на канал:",
+}
+
+
+MESSAGES = \
+    """
+    Siz hali obuna bo'lmadingiz
+    """
+

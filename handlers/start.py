@@ -7,7 +7,7 @@ from utils import texts, buttons
 from services.services import createUser, getUser
 from .menu import menu
 from state.state import lang
-
+from handlers.channel.handler import check_subscription
 
 @dp.message_handler(commands=['start'], state="*")
 async def start_handler(message: Message, state: FSMContext):
@@ -15,6 +15,7 @@ async def start_handler(message: Message, state: FSMContext):
     user_id = message.from_user.id
     user = getUser(user_id)
     
+
     if user and user.get("data") and len(user["data"]) > 0:
         await menu(message, state)
     else:
