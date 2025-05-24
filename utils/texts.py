@@ -281,6 +281,6 @@ SUCCES_PHOTO_CAPTION = {
 
 
 PHOTO_SUCCESS_TEXT = {
-    "uz": "🎯 Ilovaga kirib huddi shunday to’ldirganingizdan keyin ekranni rasmga (skrinshot) olib, sizga bot tomonidan berilgan ID kod va manzilni ushbu @testuchforbot admindan tasdiqlatib olishingiz kerak bo’ladi.",
-    "ru": "🎯 После того как вы заполните данные в приложении точно так же, сделайте скриншот экрана и подтвердите выданный ботом ID-код и адрес у администратора @testuchforbot."
+    "uz": "🎯 Ilovaga kirib huddi shunday to’ldirganingizdan keyin ekranni rasmga (skrinshot) olib, sizga bot tomonidan berilgan ID kod va manzilni ushbu @startup_04 admindan tasdiqlatib olishingiz kerak bo’ladi.",
+    "ru": "🎯 После того как вы заполните данные в приложении точно так же, сделайте скриншот экрана и подтвердите выданный ботом ID-код и адрес у администратора @startup_04."
 }
