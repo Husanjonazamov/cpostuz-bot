@@ -38,3 +38,7 @@ class ExcelCreateState(StatesGroup):
 class AdminVerifyCode(StatesGroup):
     user_id = State()
     code = State()
+    
+    
+class ScreenState(StatesGroup):
+    photo = State()

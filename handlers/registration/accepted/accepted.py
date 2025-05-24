@@ -6,6 +6,7 @@ from services.services import getUser, putUser, getBranchId, getIdBranch, getLoc
 from loader import dp, bot
 from state.state import Register, AdminVerifyCode
 from utils.env import ADMIN, SUCCES_PHOTO
+from state.state import ScreenState
 
 
 
@@ -80,8 +81,8 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
         chat_id=user_id,
         text=texts.PHOTO_SUCCESS_TEXT[lang]
     )
-    
+    await state.finish()
+    await ScreenState.photo.set()  
 
     await callback.message.edit_reply_markup(reply_markup=buttons.edit_accepted())
-    await state.finish()
 
