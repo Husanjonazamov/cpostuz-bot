@@ -5,9 +5,7 @@ from utils import texts, buttons
 from services.services import getUser, putUser, getBranchId, getIdBranch, getLocation
 from loader import dp, bot
 from state.state import Register, AdminVerifyCode
-from utils.env import ADMIN
-
-
+from utils.env import ADMIN, SUCCES_PHOTO
 
 
 
@@ -59,19 +57,30 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
     result_parts = []
 
     if avto_text:
-        result_parts.append("🚗 <b>Avto Cargo</b>:\n\n" + avto_text)
+        result_parts.append(avto_text)
 
     if avia_text:
-        result_parts.append("✈️ <b>Avia Cargo</b>:\n\n" + avia_text)
+        result_parts.append(avia_text)
 
     result_text = "\n\n".join(result_parts)
 
-    # Yuborish
     await bot.send_message(
         chat_id=user_id,
         text=result_text,
         parse_mode="HTML"
     )
+    
+    await bot.send_photo(
+        chat_id=user_id,
+        photo=SUCCES_PHOTO,
+        caption=texts.SUCCES_PHOTO_CAPTION[lang]
+    )
+    
+    await bot.send_message(
+        chat_id=user_id,
+        text=texts.PHOTO_SUCCESS_TEXT[lang]
+    )
+    
 
     await callback.message.edit_reply_markup(reply_markup=buttons.edit_accepted())
     await state.finish()

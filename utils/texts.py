@@ -272,3 +272,15 @@ MESSAGES = \
     Siz hali obuna bo'lmadingiz
     """
 
+
+
+SUCCES_PHOTO_CAPTION = {
+    "uz": "❗️Hurmatli mijoz, ushbu berilgan ID manzil, ma'lumotlarni siz shu namunadagidek 1- va 4- qatorlarga oʻz ID kodingizni yozing!\n\n❗️❗️❗️Aks holda sizning kargoingiz bilan muammo chiqishi mumkin.",
+    "ru": "❗️Уважаемый клиент, в указанный ID-адрес внесите свой ID-код в строки 1 и 4, как показано в примере!\n\n❗️❗️❗️В противном случае могут возникнуть проблемы с вашей посылкой."
+}
+
+
+PHOTO_SUCCESS_TEXT = {
+    "uz": "🎯 Ilovaga kirib huddi shunday to’ldirganingizdan keyin ekranni rasmga (skrinshot) olib, sizga bot tomonidan berilgan ID kod va manzilni ushbu @testuchforbot admindan tasdiqlatib olishingiz kerak bo’ladi.",
+    "ru": "🎯 После того как вы заполните данные в приложении точно так же, сделайте скриншот экрана и подтвердите выданный ботом ID-код и адрес у администратора @testuchforbot."
+}
