@@ -46,7 +46,7 @@ def getBranch(lang):
 
     if response.status_code == 200:
         data = response.json()
-        return data["data"]['results']
+        return data['data']
     else:
         return []
     
