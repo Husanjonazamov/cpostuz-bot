@@ -2,10 +2,11 @@ from aiogram import types
 from aiogram.dispatcher import FSMContext
 
 from loader import dp, bot
-from .handler import check_subscription
+from handlers.channel.handler import check_subscription
 from utils.texts import MESSAGES
 from services.services import getUser
 from utils import texts, buttons
+
 
 
 @dp.callback_query_handler(lambda c: c.data.startswith('check_sub'))
