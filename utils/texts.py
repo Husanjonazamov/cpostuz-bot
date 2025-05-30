@@ -281,8 +281,8 @@ SUCCES_PHOTO_CAPTION = {
 
 
 PHOTO_SUCCESS_TEXT = {
-    "uz": "🎯 Ilovaga kirib huddi shunday to’ldirganingizdan keyin ekranni rasmga (skrinshot) olib, sizga bot tomonidan berilgan ID kod va manzilni ushbu @JVEXPRESS_bot admindan tasdiqlatib olishingiz kerak bo’ladi.",
-    "ru": "🎯 После того как вы заполните данные в приложении точно так же, сделайте скриншот экрана и подтвердите выданный ботом ID-код и адрес у администратора @JVEXPRESS_bot."
+    "uz": "🎯 Ilovaga kirib huddi shunday to’ldirganingizdan keyin ekranni rasmga (skrinshot) olib, sizga bot tomonidan berilgan ID kod va manzilni ushbu @JV_ADMIN admindan tasdiqlatib olishingiz kerak bo’ladi.",
+    "ru": "🎯 После того как вы заполните данные в приложении точно так же, сделайте скриншот экрана и подтвердите выданный ботом ID-код и адрес у администратора @JV_ADMIN."
 }
 
 
