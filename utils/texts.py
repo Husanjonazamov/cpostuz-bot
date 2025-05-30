@@ -281,8 +281,8 @@ SUCCES_PHOTO_CAPTION = {
 
 
 PHOTO_SUCCESS_TEXT = {
-    "uz": "🎯 Ilovaga kirib huddi shunday to’ldirganingizdan keyin ekranni rasmga (skrinshot) olib, sizga bot tomonidan berilgan ID kod va manzilni ushbu @testuchforbot admindan tasdiqlatib olishingiz kerak bo’ladi.",
-    "ru": "🎯 После того как вы заполните данные в приложении точно так же, сделайте скриншот экрана и подтвердите выданный ботом ID-код и адрес у администратора @testuchforbot."
+    "uz": "🎯 Ilovaga kirib huddi shunday to’ldirganingizdan keyin ekranni rasmga (skrinshot) olib, sizga bot tomonidan berilgan ID kod va manzilni ushbu @JVEXPRESS_bot admindan tasdiqlatib olishingiz kerak bo’ladi.",
+    "ru": "🎯 После того как вы заполните данные в приложении точно так же, сделайте скриншот экрана и подтвердите выданный ботом ID-код и адрес у администратора @JVEXPRESS_bot."
 }
 
 
@@ -291,3 +291,14 @@ SUCCESS_SCREEN = {
     "uz": "✅ Skrinshotingiz muvaffaqiyatli qabul qilindi. Rahmat!",
     "ru": "✅ Ваш скриншот успешно принят. Спасибо!"
 }
+
+
+
+def caption_text(**kwargs):
+    caption = ''
+    
+    caption += f"<b>Foydalanuvchi: {kwargs['username']}</b>\n"
+    caption += f"<b>Telefon: <code>+{kwargs['phone']}</code></b>\n"
+    
+    return caption
+    
