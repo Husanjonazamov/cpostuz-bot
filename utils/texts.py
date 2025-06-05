@@ -146,27 +146,52 @@ PASSPORT_BACK = {
 }
 
 
-
 def summary(**kwargs):
     summary = ''
     
     if kwargs['lang'] == 'uz':
-        summary += f"👤 Ism: {kwargs['name']}\n"
-        summary += f"📞 Telefon: {kwargs['phone']}\n"
-        summary += f"🪪 Passport: {kwargs['passport_id']}\n"
-        summary += f"🔢 Pinfl: {kwargs['passport_jsh']}\n"
-        summary += f"📅 Tug'ilgan kun: {kwargs['birth_date']}\n"
-        summary += f"📍 Manzil: {kwargs['address']}\n"
-        summary += f"🏢 Filial: {kwargs['branch']}\n"
+        summary += f"<b>👤 Ism:</b> {kwargs['name']}\n"
+        summary += f"<b>📞 Telefon:</b> {kwargs['phone']}\n"
+        summary += f"<b>🪪 Passport:</b> {kwargs['passport_id']}\n"
+        summary += f"<b>🔢 Pinfl:</b> {kwargs['passport_jsh']}\n"
+        summary += f"<b>📅 Tug'ilgan kun:</b> {kwargs['birth_date']}\n"
+        summary += f"<b>📍 Manzil:</b> {kwargs['address']}\n"
+        summary += f"<b>🏢 Filial:</b> {kwargs['branch']}\n"
     else:
-        summary += f"👤 Имя: {kwargs['name']}\n"
-        summary += f"📞 Телефон: {kwargs['phone']}\n"
-        summary += f"🪪 Паспорт: {kwargs['passport_id']}\n"
-        summary += f"🔢 ПИНФЛ: {kwargs['passport_jsh']}\n"
-        summary += f"📅 Дата рождения: {kwargs['birth_date']}\n"
-        summary += f"📍 Адрес: {kwargs['address']}\n"
-        summary += f"🏢 Филиал: {kwargs['branch']}\n"
+        summary += f"<b>👤 Имя:</b> {kwargs['name']}\n"
+        summary += f"<b>📞 Телефон:</b> {kwargs['phone']}\n"
+        summary += f"<b>🪪 Паспорт:</b> {kwargs['passport_id']}\n"
+        summary += f"<b>🔢 ПИНФЛ:</b> {kwargs['passport_jsh']}\n"
+        summary += f"<b>📅 Дата рождения:</b> {kwargs['birth_date']}\n"
+        summary += f"<b>📍 Адрес:</b> {kwargs['address']}\n"
+        summary += f"<b>🏢 Филиал:</b> {kwargs['branch']}\n"
 
+    return summary
+
+
+
+
+def admin_summary(**kwargs):
+    summary = ''
+    
+    if kwargs['lang'] == 'uz':
+        summary += f"<b>👤 Ism:</b> {kwargs['name']}\n"
+        summary += f"<b>📞 Telefon:</b> {kwargs['phone']}\n"
+        summary += f"<b>🪪 Passport:</b> {kwargs['passport_id']}\n"
+        summary += f"<b>🔢 Pinfl:</b> {kwargs['passport_jsh']}\n"
+        summary += f"<b>📅 Tug'ilgan kun:</b> {kwargs['birth_date']}\n"
+        summary += f"<b>📍 Manzil:</b> {kwargs['address']}\n"
+        summary += f"<b>🆔 Avto Id:</b> <code>{kwargs['avto_id']}</code>\n"
+        summary += f"<b>🏢 Filial:</b> {kwargs['branch']}\n"
+    else:
+        summary += f"<b>👤 Имя:</b> {kwargs['name']}\n"
+        summary += f"<b>📞 Телефон:</b> {kwargs['phone']}\n"
+        summary += f"<b>🪪 Паспорт:</b> {kwargs['passport_id']}\n"
+        summary += f"<b>🔢 ПИНФЛ:</b> {kwargs['passport_jsh']}\n"
+        summary += f"<b>📅 Дата рождения:</b> {kwargs['birth_date']}\n"
+        summary += f"<b>📍 Адрес:</b> {kwargs['address']}\n"
+        summary += f"<b>🆔 ID Авто:</b> <code>{kwargs['avto_id']}</code>\n"
+        summary += f"<b>🏢 Филиал:</b> {kwargs['branch']}\n"
         
     return summary
 

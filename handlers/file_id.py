@@ -12,6 +12,9 @@ async def file_id(message: Message, state: FSMContext):
     photo_id = message.photo[-1].file_id
     user_id = message.from_user.id
     
+    if message.chat.type == "private":
+        return
+    
     username = message.from_user.username
     
     user = getUser(user_id)

@@ -2,7 +2,7 @@ from aiogram.types import Message
 from aiogram.dispatcher import FSMContext
 
 from loader import dp, bot
-from services.services import getUser, putUser, getBranchId
+from services.services import getUser, putUser, getBranchId, getIdBranch
 from utils import texts, buttons
 from utils.env import ADMIN
 from aiogram.types import InputMediaPhoto
@@ -20,6 +20,7 @@ async def confirm_handler(message: Message, state: FSMContext):
     users = getUser(user_id)
     lang = users['data'][0]['lang']
     register_id = users['data'][0]['id']
+        
     
     data = await state.get_data()
     name = data.get('name')
@@ -32,7 +33,15 @@ async def confirm_handler(message: Message, state: FSMContext):
     passport_front = data.get('passport_front')
     passport_back = data.get("passport_back")
     
-    caption = texts.summary(
+    if branch.lower() == 'toshobl':
+        short_branch = "Tosh"
+    elif branch.lower() == "toshkent shahar":
+        short_branch = "JV"
+    else:
+        short_branch = branch[:3]
+    
+    avto_id=f"{short_branch}{register_id}"
+    caption = texts.admin_summary(
         lang=lang,
         name=name,
         phone=phone,
@@ -40,6 +49,7 @@ async def confirm_handler(message: Message, state: FSMContext):
         passport_jsh=passport_jsh,
         birth_date=birth_date,
         address=address,
+        avto_id=avto_id,
         branch=branch,
         passport_front=passport_front,
         passport_back=passport_back
@@ -50,7 +60,8 @@ async def confirm_handler(message: Message, state: FSMContext):
         InputMediaPhoto(passport_back)  
     ]
     
-    await bot.send_media_group(
+    
+    sent_messages = await bot.send_media_group(
         chat_id=ADMIN,
         media=media_group
     )
@@ -59,7 +70,7 @@ async def confirm_handler(message: Message, state: FSMContext):
         text=texts.ADMIN_CONFIRM,
         reply_markup=buttons.admin_confirm(user_id)
     )
-    
+
     
     await message.answer(
         texts.SEND_ADMIN[lang].format(register_id),
@@ -83,8 +94,7 @@ async def confirm_handler(message: Message, state: FSMContext):
     }
 
     putUser(user_id, user)
-    
-    await state.finish()
+    await state.finish()    
 
     
     
