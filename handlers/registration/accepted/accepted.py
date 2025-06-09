@@ -22,6 +22,7 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
     # Short branch
     all_text = getIdBranch(int(branch))
     text = all_text['data']['branch_name']
+    print(text)
     if text.lower() == 'toshobl':
         short_branch = "Tosh"
     elif text.lower() == "toshkent shahar":

@@ -327,3 +327,9 @@ def caption_text(**kwargs):
     
     return caption
     
+    
+    
+INVALID_BRANCH = {
+    "uz": "❌ Noto‘g‘ri filial nomi tanlandi. Iltimos, ro‘yxatdan tanlang.",
+    "ru": "❌ Вы выбрали неверное отделение. Пожалуйста, выберите из списка."
+}

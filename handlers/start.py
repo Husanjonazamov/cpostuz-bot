@@ -9,6 +9,7 @@ from .menu import menu
 from state.state import lang
 from handlers.channel.handler import check_subscription
 
+
 @dp.message_handler(commands=['start'], state="*")
 async def start_handler(message: Message, state: FSMContext):
     
