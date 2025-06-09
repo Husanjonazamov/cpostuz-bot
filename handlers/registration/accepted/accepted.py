@@ -17,6 +17,9 @@ async def accepted(callback: CallbackQuery, state: FSMContext):
     user = getUser(user_id)
     lang = user['data'][0]['lang']
     branch = user['data'][0]['branch']
+    print(user)
+    print(branch)
+    
     register_id = user['data'][0]['id']
     
     # Short branch

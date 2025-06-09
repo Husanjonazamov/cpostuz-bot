@@ -7,7 +7,6 @@ from utils.env import BASE_URL
 def createUser(user):
     url = f"{BASE_URL}/users/"
     response = requests.post(url, json=user)
-    print(response.status_code)
     if response.status_code == 201:
         data = response.json()
         return data
@@ -30,7 +29,6 @@ def putUser(user_id, user):
     url = f"{BASE_URL}/users/update/{user_id}/"
     
     response = requests.patch(url, json=user)  
-    print("-dsadsa")
     return response.json()
     
     
@@ -55,7 +53,6 @@ def getBranch(lang):
 def getBranchId(branch_name):
     url = f"{BASE_URL}/branch/{branch_name}/"
     response = requests.get(url)
-    print(response.status_code)
     if response.status_code == 200:
         data = response.json()
         return data
@@ -94,7 +91,6 @@ def SearchId(cargo_id):
         else:
             return None
     except Exception as e:
-        print(f"Xatolik: {e}")
         return None
 
 
@@ -109,7 +105,6 @@ def ExcelCreate(file_obj, file_name):
         response.raise_for_status()
         return response.json()
     except Exception as e:
-        print(f"Excel file yyuklashda xatolik: {e}")
         return None
 
 
@@ -119,7 +114,6 @@ def getUserAll():
     
     response = requests.get(url)
     
-    print(response.json())  
     return response.json()
 
 

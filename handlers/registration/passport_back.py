@@ -28,11 +28,9 @@ async def passport_back_handler(message: Message, state: FSMContext):
     passport_front = data.get('passport_front')
     
     
-    
     all_users = getUserAll()
     for u in all_users['data']['results']:
         code = u['cargo_code']
-        print(code)
         if u['passport_id'] == passport_id and u['passport_jsh'] == passport_jsh:
             await message.answer(texts.OLD_REGISTER[lang].format(code))
             await state.finish()
