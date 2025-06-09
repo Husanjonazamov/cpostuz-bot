@@ -50,9 +50,12 @@ def getBranch(lang):
     
     
     
-def getBranchId(branch_name):
+def getBranchId(branch_name, lang):
     url = f"{BASE_URL}/branch/{branch_name}/"
-    response = requests.get(url)
+    headers = {
+        "Accept-Language": lang  
+    }
+    response = requests.get(url, headers)
     if response.status_code == 200:
         data = response.json()
         return data

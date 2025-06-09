@@ -77,7 +77,7 @@ async def confirm_handler(message: Message, state: FSMContext):
         reply_markup=buttons.mainMenu(lang, user_id)
     )
     
-    branch_data = getBranchId(branch)
+    branch_data = getBranchId(branch, lang)
     print(branch_data)
     branch_id = branch_data['data']['branch_id']
 
