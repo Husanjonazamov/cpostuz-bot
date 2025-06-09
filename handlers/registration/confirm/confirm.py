@@ -79,7 +79,7 @@ async def confirm_handler(message: Message, state: FSMContext):
     
     branch_data = getBranchId(branch)
     branch_id = branch_data['data']['branch_id']
-    print(branch_id)
+    print("branch_id:", 1)
 
     user = {
         "name": name,
