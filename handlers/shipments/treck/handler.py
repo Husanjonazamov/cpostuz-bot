@@ -11,8 +11,8 @@ from state.state import TreckSearch
 
 
 @dp.message_handler(lambda message: message.text in (
-    buttons.TRECK_UZ,
-    buttons.TRECK_RU
+    buttons.CARGO_UZ,
+    buttons.CARGO_RU
 ), state="*")
 async def shipments(message: Message, state: FSMContext):
     user_id = message.from_user.id

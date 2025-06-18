@@ -242,7 +242,7 @@ def shipments(lang):
 def channel_check(user_id):
     inline = InlineKeyboardMarkup()
     inline.add(
-        InlineKeyboardButton("🔔 Kanalga qo'shilish", url="https://t.me/JVEXPRESS"),
+        InlineKeyboardButton("🔔 Kanalga qo'shilish", url="https://t.me/dasfdsfddd"),
     )
     inline.add(
         InlineKeyboardButton("✅ Tekshirish", callback_data=f"check_sub_{user_id}")

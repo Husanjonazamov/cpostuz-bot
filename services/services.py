@@ -83,17 +83,14 @@ def getCategory(lang):
     
 def SearchId(cargo_id):
     url = f"{BASE_URL}/excel-file/me/"
-    id = str(cargo_id)
     try:
-        response = requests.post(url, json={"id": id}, timeout=10)
+        response = requests.post(url, json={"id": str(cargo_id)}, timeout=10)
         response.raise_for_status()
         data = response.json()
-        
-        if data and "data" in data and data["data"]: 
-            return data
-        else:
-            return None
-    except Exception as e:
+        if data and data.get("data", {}).get("data"):
+            return data["data"]["data"]
+        return None
+    except Exception:
         return None
 
 

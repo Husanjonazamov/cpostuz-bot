@@ -246,6 +246,11 @@ CARGO_ID = {
     "ru": "Введите Cargo ID!"
 }
 
+Trek_ID = {
+    "uz": "Trek IDni kiriting!",
+    "ru": "Введите Trek ID!"
+}
+
 
 TRACK_ID = {
     "uz": "Trek IDni kiriting!",
@@ -333,3 +338,27 @@ INVALID_BRANCH = {
     "uz": "❌ Noto‘g‘ri filial nomi tanlandi. Iltimos, ro‘yxatdan tanlang.",
     "ru": "❌ Вы выбрали неверное отделение. Пожалуйста, выберите из списка."
 }
+
+
+
+
+
+def track_item(**kwargs):
+    item = ''
+    short_branch = kwargs.get("short_branch", "")
+    register_id = kwargs.get("register_id", "")
+    combined_id = f"{short_branch}{register_id}"
+
+    
+    item += f"ID: <code>{combined_id}</code>\n"
+    item += f"Name: AVTO ORQALI KELADI XITOYDA YUKLAR YEG'ILVOTI\n"
+    item += f"Q-TY: {kwargs['qty']}\n"
+    item += f"Reys: {kwargs['reys']}\n"
+    item += f"Trek number: <code>{kwargs['treck_number']}</code>\n"
+    item += f"Date: {kwargs['date']}\n"
+    
+    return item
+    
+    
+     
+    

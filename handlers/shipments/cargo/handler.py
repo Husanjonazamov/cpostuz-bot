@@ -12,8 +12,8 @@ from state.state import CargoSearch
 
 
 @dp.message_handler(lambda message: message.text in (
-    buttons.CARGO_UZ,
-    buttons.CARGO_RU
+    buttons.TRECK_UZ,
+    buttons.TRECK_RU
 ), state="*")
 
 async def shipments(message: Message, state: FSMContext):
@@ -22,7 +22,7 @@ async def shipments(message: Message, state: FSMContext):
     lang = user['data'][0]['lang']
 
     await message.answer(
-        texts.CARGO_ID[lang],
+        texts.Trek_ID[lang],
         reply_markup=buttons.mainBack(lang)
     )    
     await CargoSearch.cargo_id.set()
