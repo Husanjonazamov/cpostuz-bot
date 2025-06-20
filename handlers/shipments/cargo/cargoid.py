@@ -47,8 +47,6 @@ async def shipments(message: Message, state: FSMContext):
 
         await message.answer(
             text=texts.track_item(
-                short_branch=short_branch,
-                register_id=register_id,
                 qty=qty,
                 reys=reys,
                 treck_number=treck_number,

@@ -345,12 +345,7 @@ INVALID_BRANCH = {
 
 def track_item(**kwargs):
     item = ''
-    short_branch = kwargs.get("short_branch", "")
-    register_id = kwargs.get("register_id", "")
-    combined_id = f"{short_branch}{register_id}"
 
-    
-    item += f"ID: <code>{combined_id}</code>\n"
     item += f"Name: AVTO ORQALI KELADI XITOYDA YUKLAR YEG'ILVOTI\n"
     item += f"Q-TY: {kwargs['qty']}\n"
     item += f"Reys: {kwargs['reys']}\n"
