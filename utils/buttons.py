@@ -222,7 +222,6 @@ def shipments(lang):
     if lang == "uz":
         markup = ReplyKeyboardMarkup(
             keyboard=[
-                [KeyboardButton(text=CARGO_UZ)],
                 [KeyboardButton(text=TRECK_UZ)],
                 [KeyboardButton(text=BACK_UZ)],
             ],resize_keyboard=True
@@ -230,7 +229,6 @@ def shipments(lang):
     else:
         markup = ReplyKeyboardMarkup(
             keyboard=[
-                [KeyboardButton(text=CARGO_RU)],
                 [KeyboardButton(text=TRECK_RU)],
                 [KeyboardButton(text=BACK_RU)],
             ],resize_keyboard=True
